@@ -66,7 +66,34 @@ public class SensorResource {
 
         return Response.status(201).entity(sensor).build();
     }
-
+    
+    // GET /api/v1/sensors/{sensorId} — get one sensor by ID
+    @GET
+    @Path("/{sensorId}")
+    public Response getSensor(@PathParam("sensorId") String sensorId) {
+        Sensor sensor = store.getSensor(sensorId);
+        if (sensor == null) {
+            return Response.status(404)
+                           .entity(Map.of("error", "Sensor not found: " + sensorId))
+                           .build();
+        }
+        return Response.ok(sensor).build();
+    }
+    
+    // PUT /api/v1/sensors/{sensorId}/status
+    @PUT
+    @Path("/{sensorId}/status")
+    public Response updateStatus(@PathParam("sensorId") String sensorId,
+                                  Map<String, String> body) {
+        Sensor sensor = store.getSensor(sensorId);
+        if (sensor == null) {
+            return Response.status(404)
+                           .entity(Map.of("error", "Sensor not found: " + sensorId))
+                           .build();
+        }
+        sensor.setStatus(body.get("status"));
+        return Response.ok(sensor).build();
+    }
     // Sub-resource locator for readings
     @Path("/{sensorId}/readings")
     public SensorReadingResource getReadingResource(@PathParam("sensorId") String sensorId) {
