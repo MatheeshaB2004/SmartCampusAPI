@@ -75,7 +75,7 @@ Use these commands to interact with and test the API functionality:
 
 1. API Discovery (Root Entry Point ):
 
-curl -X GET http://localhost:8080/SmartCampusAPI/api/v1
+  - GET http://localhost:8080/SmartCampusAPI/api/v1
 
 2. List All Rooms:
  
