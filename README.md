@@ -73,27 +73,27 @@ http://localhost:8080/SmartCampusAPI/api/v1
 
 Use these commands to interact with and test the API functionality:
 
-1. API Discovery (Root Entry Point ):
+### 1. API Discovery (Root Entry Point ):
 
   - GET http://localhost:8080/SmartCampusAPI/api/v1
 
-2. List All Rooms:
+### 2. List All Rooms:
  
  - GET http://localhost:8080/SmartCampusAPI/api/v1/rooms
 
-3. Register a New Room:
+### 3. Register a New Room:
 
  - POST http://localhost:8080/SmartCampusAPI/api/v1/rooms \
   -H "Content-Type: application/json" \
   -d '{"id":"LIB-401", "name":"Library Group Study", "capacity":20}'
 
-4. Register a New Sensor (Linked to Room ):
+### 4. Register a New Sensor (Linked to Room ):
 
  - POST http://localhost:8080/SmartCampusAPI/api/v1/sensors \
   -H "Content-Type: application/json" \
   -d '{"id":"CO2-99", "type":"CO2", "status":"ACTIVE", "roomId":"LIB-301"}'
 
-5. Retrieve Sensor Reading History:
+### 5. Retrieve Sensor Reading History:
 
  - GET http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings
 
@@ -101,7 +101,7 @@ Use these commands to interact with and test the API functionality:
 
 ## 4. Coursework Report
 
-Part 1: Service Architecture & Setup
+### Part 1: Service Architecture & Setup
 
 Answer for Question 1.1:
 
@@ -111,7 +111,7 @@ Answer for Question 1.2:
 
 The concept of HATEOAS (Hypermedia As The Engine Of Application State) is that API responses need to have links to other related actions and resources, and that clients can navigate the API dynamically without depending on fixed URLs or external documentation. This is highly beneficial to client developers since the API is automatically self-documenting - a client can begin with a single entry point and then find out what operations are available to it by following the links given in each response. Also, should server-side URLs evolve, clients that visit hypermedia links will automatically update themselves without needing software modifications, enhancing maintainability and decreasing the chance of integration failure when the URL structure evolves.
 
-Part 2: Room Management
+### Part 2: Room Management
 
 Answer for Question 2.1:
 
@@ -121,7 +121,7 @@ Answer for Question 2.2:
 
 Yes, the DELETE operation is idempotent here. Idempotency refers to the property of having the same server state when performing the same request multiple times. The room is deleted in the data store, and a 200 OK is sent back on the first DELETE request for a room. If there is any further identical DELETE request for the same room ID, the room does not exist anymore, thus the server sends a 404 Not Found response. The code of response varies, but the state of the server is the same after each call - the room does not exist. This meets the concept of idempotency, as stipulated by the REST architectural principles.
 
-Part 3: Sensor Operations & Linking
+### Part 3: Sensor Operations & Linking
 
 Answer for Question 3.1:
 
@@ -131,13 +131,13 @@ Answer for Question 3.2:
 
 It is semantically accurate to use query parameters, such as GET /api/v1/sensors?type=CO2, for optional filtering since the primary resource that is being accessed in the request is still /sensors irrespective of the filter used. Using path parameters, for instance, /api/v1/sensors/type/CO2, will wrongly imply that CO2 is an entity on its own, which is against REST resource naming guidelines. Additionally, using query parameters provides more flexibility as multiple filters may be added to the same request without having to change the URL. For example, one could use ?type=CO2&status=ACTIVE.
 
-Part 4: Deep Nesting with Sub - Resources
+### Part 4: Deep Nesting with Sub - Resources
 
 Answer for Question 4.1:
 
 Sub-Resource Locator Pattern allows the delegation of the nested path processing to another specific class for a particular type of resource. Rather than specifying all possible endpoints, such as /sensors/{id}/readings and /sensors/{id}/readings/{rid}, in one massive controller, we separate concerns into different classes, where each class is responsible for its task. In our case, SensorResource will have methods for operations at the sensor level, whereas SensorReadingResource will handle only the reading history. It makes code much more maintainable since it follows the single responsibility principle, allowing each class to perform one job. Also, this pattern allows you to test your classes individually, improving testability.
 
-Part 5: Advanced Error Handling, Exception Mapping & Logging
+### Part 5: Advanced Error Handling, Exception Mapping & Logging
 
 Answer for Question 5.1:
 
