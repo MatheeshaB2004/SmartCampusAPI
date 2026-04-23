@@ -29,43 +29,43 @@ Key technical features include:
 
 Prerequisites
 
-  • Java Development Kit (JDK): Version 8 or higher.
-  • Apache Maven: For dependency management and building.
-  • Servlet Container: A JAX-RS compatible container like GlassFish, Payara, or Apache Tomcat with Jersey.
+• Java Development Kit (JDK): Version 8 or higher.
+
+• NetBeans IDE: For project management and execution.
+
+• Apache Tomcat: Configured within NetBeans as the server environment.
+
+Step-by-Step Setup and Execution
+
+1. Download the Repository:
+Download the source code from GitHub and extract it to your local machine.
+
+2. Open Project in NetBeans:
+
+  • Open NetBeans IDE.
+  
+  • Go to File > Open Project.
+  
+  • Navigate to the extracted folder and select the SmartCampusAPI project.
 
 
-Step-by-Step Build Process
+3. Configure Apache Tomcat:
 
-  1. Clone the Repository:
-  
-    git clone https://github.com/MatheeshaB2004/SmartCampusAPI.git
-    cd SmartCampusAPI
-  
-  2.Build the Project:
-  
-  Run the following Maven command to compile and package the application:
-  
-    mvn clean install
-  
-  This will generate a SmartCampusAPI.war file in the target/ directory.
-  
-  Launching the Server
-  
-    1. Using NetBeans:
-  
-      • Open NetBeans IDE.
-  
-      • Go to File > Open Project and select the SmartCampusAPI folder.
-  
-      • Right-click the project in the Projects pane and select Run.
-  
-      • The IDE will deploy the WAR file to your configured server (e.g., GlassFish ).
-  
-  
-    2. Accessing the API:
-    Once started, the API entry point will be available at:
-  
-    http://localhost:8080/SmartCampusAPI/api/v1
+• If not already configured, go to the Services tab in NetBeans.
+• Right-click Servers and select Add Server.
+• Choose Apache Tomcat and follow the prompts to point to your Tomcat installation directory.
+
+
+4. Run the Server:
+
+• Right-click the SmartCampusAPI project in the Projects pane.
+• Select Run.
+• NetBeans will automatically build the project using Maven, package it as a .war file, and deploy it to the Apache Tomcat server.
+
+5. Accessing the API:
+
+The API entry point will be available at:
+http://localhost:8080/SmartCampusAPI/api/v1
 
 
 
