@@ -1,6 +1,6 @@
 # SmartCampusAPI - "Smart Campus" Sensor & Room Management
 
-1. API Design Overview
+#1. API Design Overview
 
 The SmartCampusAPI is a robust, versioned RESTful web service designed to manage the university's "Smart Campus" infrastructure. Built using the JAX-RS (Jakarta RESTful Web Services) framework, the system provides a scalable interface for facilities managers to interact with campus data, specifically focusing on Rooms, Sensors, and their historical Sensor Readings.
 
