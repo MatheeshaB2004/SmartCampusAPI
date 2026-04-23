@@ -1,5 +1,108 @@
-# SmartCampusAPI
-Smart Campus REST API - JAX-RS Coursework Report
+# SmartCampusAPI - "Smart Campus" Sensor & Room Management
+
+1. API Design Overview
+
+The SmartCampusAPI is a robust, versioned RESTful web service designed to manage the university's "Smart Campus" infrastructure. Built using the JAX-RS (Jakarta RESTful Web Services) framework, the system provides a scalable interface for facilities managers to interact with campus data, specifically focusing on Rooms, Sensors, and their historical Sensor Readings.
+
+The architecture follows a logical resource hierarchy reflecting the physical campus structure:
+
+• Rooms: Containers for sensors with capacity constraints.
+
+• Sensors: IoT devices (CO2, Temperature, etc.) linked to specific rooms.
+
+• Readings: Historical data points captured by sensors, implemented using the Sub-Resource Locator pattern for clean delegation.
+
+  Key technical features include:
+
+• Thread-Safe In-Memory Storage: Utilizing ConcurrentHashMap to ensure data consistency in a request-scoped environment.
+
+• Advanced Error Handling: Custom ExceptionMappers providing semantic JSON error responses (409, 422, 403, 500).
+
+• API Observability: Request and Response logging filters for auditability.
+
+
+2. Build and Launch Instructions
+
+Prerequisites
+
+  • Java Development Kit (JDK): Version 8 or higher.
+  • Apache Maven: For dependency management and building.
+  • Servlet Container: A JAX-RS compatible container like GlassFish, Payara, or Apache Tomcat with Jersey.
+
+
+Step-by-Step Build Process
+
+  1. Clone the Repository:
+  
+    git clone https://github.com/MatheeshaB2004/SmartCampusAPI.git
+    cd SmartCampusAPI
+  
+  2.Build the Project:
+  
+  Run the following Maven command to compile and package the application:
+  
+    mvn clean install
+  
+  This will generate a SmartCampusAPI.war file in the target/ directory.
+  
+  Launching the Server
+  
+    1. Using NetBeans:
+  
+      • Open NetBeans IDE.
+  
+      • Go to File > Open Project and select the SmartCampusAPI folder.
+  
+      • Right-click the project in the Projects pane and select Run.
+  
+      • The IDE will deploy the WAR file to your configured server (e.g., GlassFish ).
+  
+  
+    2. Accessing the API:
+    Once started, the API entry point will be available at:
+  
+    http://localhost:8080/SmartCampusAPI/api/v1
+
+
+3. Sample curl Commands
+
+Use these commands to interact with and test the API functionality:
+
+1. API Discovery (Root Entry Point ):
+
+Bash
+curl -X GET http://localhost:8080/SmartCampusAPI/api/v1
+
+
+2. List All Rooms:
+
+Bash
+curl -X GET http://localhost:8080/SmartCampusAPI/api/v1/rooms
+
+
+3. Register a New Room:
+
+Bash
+curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/rooms \
+-H "Content-Type: application/json" \
+-d '{"id":"LIB-401", "name":"Library Group Study", "capacity":20}'
+
+
+4. Register a New Sensor (Linked to Room ):
+
+Bash
+curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/sensors \
+-H "Content-Type: application/json" \
+-d '{"id":"CO2-99", "type":"CO2", "status":"ACTIVE", "roomId":"LIB-301"}'
+
+
+5. Retrieve Sensor Reading History:
+
+Bash
+curl -X GET http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings
+
+
+5. Coursework Report
 
 Part 1: Service Architecture & Setup
 
