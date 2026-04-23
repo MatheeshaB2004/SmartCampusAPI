@@ -1,6 +1,6 @@
 # SmartCampusAPI - "Smart Campus" Sensor & Room Management
 
-# 1. API Design Overview
+## 1. API Design Overview
 
 The SmartCampusAPI is a robust, versioned RESTful web service designed to manage the university's "Smart Campus" infrastructure. Built using the JAX-RS (Jakarta RESTful Web Services) framework, the system provides a scalable interface for facilities managers to interact with campus data, specifically focusing on Rooms, Sensors, and their historical Sensor Readings.
 
@@ -25,15 +25,15 @@ Key technical features include:
 
 
 
-# 2. Build and Launch Instructions
+## 2. Build and Launch Instructions
 
 Prerequisites
 
-• Java Development Kit (JDK): Version 8 or higher.
++ Java Development Kit (JDK): Version 8 or higher.
 
-• NetBeans IDE: For project management and execution.
++ NetBeans IDE: For project management and execution.
 
-• Apache Tomcat: Configured within NetBeans as the server environment.
++ Apache Tomcat: Configured within NetBeans as the server environment.
 
 Step-by-Step Setup and Execution
 
@@ -42,25 +42,25 @@ Download the source code from GitHub and extract it to your local machine.
 
 2. Open Project in NetBeans:
 
-  • Open NetBeans IDE.
+  + Open NetBeans IDE.
   
-  • Go to File > Open Project.
+  + Go to File > Open Project.
   
-  • Navigate to the extracted folder and select the SmartCampusAPI project.
+  + Navigate to the extracted folder and select the SmartCampusAPI project.
 
 
 3. Configure Apache Tomcat:
 
-• If not already configured, go to the Services tab in NetBeans.
-• Right-click Servers and select Add Server.
-• Choose Apache Tomcat and follow the prompts to point to your Tomcat installation directory.
++ If not already configured, go to the Services tab in NetBeans.
++ Right-click Servers and select Add Server.
++ Choose Apache Tomcat and follow the prompts to point to your Tomcat installation directory.
 
 
 4. Run the Server:
 
-• Right-click the SmartCampusAPI project in the Projects pane.
-• Select Run.
-• NetBeans will automatically build the project using Maven, package it as a .war file, and deploy it to the Apache Tomcat server.
++ Right-click the SmartCampusAPI project in the Projects pane.
++ Select Run.
++ NetBeans will automatically build the project using Maven, package it as a .war file, and deploy it to the Apache Tomcat server.
 
 5. Accessing the API:
 
@@ -69,7 +69,7 @@ http://localhost:8080/SmartCampusAPI/api/v1
 
 
 
-# 3. Sample curl Commands
+## 3. Sample curl Commands
 
 Use these commands to interact with and test the API functionality:
 
@@ -99,7 +99,7 @@ Use these commands to interact with and test the API functionality:
 
 
 
-# 4. Coursework Report
+## 4. Coursework Report
 
 Part 1: Service Architecture & Setup
 
