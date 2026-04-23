@@ -74,29 +74,25 @@ Use these commands to interact with and test the API functionality:
 
 curl -X GET http://localhost:8080/SmartCampusAPI/api/v1
 
-
 2. List All Rooms:
-
-curl -X GET http://localhost:8080/SmartCampusAPI/api/v1/rooms
-
+ 
+  GET http://localhost:8080/SmartCampusAPI/api/v1/rooms
 
 3. Register a New Room:
 
-curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/rooms \
--H "Content-Type: application/json" \
--d '{"id":"LIB-401", "name":"Library Group Study", "capacity":20}'
-
+  POST http://localhost:8080/SmartCampusAPI/api/v1/rooms \
+  -H "Content-Type: application/json" \
+  -d '{"id":"LIB-401", "name":"Library Group Study", "capacity":20}'
 
 4. Register a New Sensor (Linked to Room ):
 
-curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/sensors \
--H "Content-Type: application/json" \
--d '{"id":"CO2-99", "type":"CO2", "status":"ACTIVE", "roomId":"LIB-301"}'
-
+  POST http://localhost:8080/SmartCampusAPI/api/v1/sensors \
+  -H "Content-Type: application/json" \
+  -d '{"id":"CO2-99", "type":"CO2", "status":"ACTIVE", "roomId":"LIB-301"}'
 
 5. Retrieve Sensor Reading History:
 
-curl -X GET http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings
+  GET http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings
 
 
 
