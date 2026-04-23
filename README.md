@@ -29,11 +29,11 @@ Key technical features include:
 
 Prerequisites
 
--+ Java Development Kit (JDK): Version 8 or higher.
+-- Java Development Kit (JDK): Version 8 or higher.
 
--+ NetBeans IDE: For project management and execution.
+-- NetBeans IDE: For project management and execution.
 
--+ Apache Tomcat: Configured within NetBeans as the server environment.
+-- Apache Tomcat: Configured within NetBeans as the server environment.
 
 Step-by-Step Setup and Execution
 
@@ -42,11 +42,11 @@ Download the source code from GitHub and extract it to your local machine.
 
 2. Open Project in NetBeans:
 
--+ Open NetBeans IDE.
+-- Open NetBeans IDE.
   
--+ Go to File > Open Project.
+-- Go to File > Open Project.
   
--+ Navigate to the extracted folder and select the SmartCampusAPI project.
+-- Navigate to the extracted folder and select the SmartCampusAPI project.
 
 
 3. Configure Apache Tomcat:
