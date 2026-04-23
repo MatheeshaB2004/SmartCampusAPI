@@ -21,7 +21,7 @@ The architecture follows a logical resource hierarchy reflecting the physical ca
 • API Observability: Request and Response logging filters for auditability.
 
 
-2. Build and Launch Instructions
+# 2. Build and Launch Instructions
 
 Prerequisites
 
@@ -64,7 +64,7 @@ Step-by-Step Build Process
     http://localhost:8080/SmartCampusAPI/api/v1
 
 
-3. Sample curl Commands
+# 3. Sample curl Commands
 
 Use these commands to interact with and test the API functionality:
 
@@ -102,7 +102,7 @@ Bash
 curl -X GET http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings
 
 
-5. Coursework Report
+# 5. Coursework Report
 
 Part 1: Service Architecture & Setup
 
