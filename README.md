@@ -4,7 +4,9 @@
 
 The SmartCampusAPI is a robust, versioned RESTful web service designed to manage the university's "Smart Campus" infrastructure. Built using the JAX-RS (Jakarta RESTful Web Services) framework, the system provides a scalable interface for facilities managers to interact with campus data, specifically focusing on Rooms, Sensors, and their historical Sensor Readings.
 
+
 The architecture follows a logical resource hierarchy reflecting the physical campus structure:
+
 
   • Rooms: Containers for sensors with capacity constraints.
   
@@ -13,6 +15,7 @@ The architecture follows a logical resource hierarchy reflecting the physical ca
   • Readings: Historical data points captured by sensors, implemented using the Sub-Resource Locator pattern for clean delegation.
 
 Key technical features include:
+
 
   • Thread-Safe In-Memory Storage: Utilizing ConcurrentHashMap to ensure data consistency in a request-scoped environment.
   
