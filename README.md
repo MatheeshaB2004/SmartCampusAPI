@@ -8,20 +8,20 @@ The SmartCampusAPI is a robust, versioned RESTful web service designed to manage
 The architecture follows a logical resource hierarchy reflecting the physical campus structure:
 
 
-  • Rooms: Containers for sensors with capacity constraints.
+  - Rooms: Containers for sensors with capacity constraints.
   
-  • Sensors: IoT devices (CO2, Temperature, etc.) linked to specific rooms.
+  - Sensors: IoT devices (CO2, Temperature, etc.) linked to specific rooms.
   
-  • Readings: Historical data points captured by sensors, implemented using the Sub-Resource Locator pattern for clean delegation.
+  - Readings: Historical data points captured by sensors, implemented using the Sub-Resource Locator pattern for clean delegation.
 
 Key technical features include:
 
 
-  • Thread-Safe In-Memory Storage: Utilizing ConcurrentHashMap to ensure data consistency in a request-scoped environment.
+  - Thread-Safe In-Memory Storage: Utilizing ConcurrentHashMap to ensure data consistency in a request-scoped environment.
   
-  • Advanced Error Handling: Custom ExceptionMappers providing semantic JSON error responses (409, 422, 403, 500).
+  - Advanced Error Handling: Custom ExceptionMappers providing semantic JSON error responses (409, 422, 403, 500).
   
-  • API Observability: Request and Response logging filters for auditability.
+  - API Observability: Request and Response logging filters for auditability.
 
 
 
@@ -29,11 +29,11 @@ Key technical features include:
 
 Prerequisites
 
--- Java Development Kit (JDK): Version 8 or higher.
+- Java Development Kit (JDK): Version 8 or higher.
 
--- NetBeans IDE: For project management and execution.
+- NetBeans IDE: For project management and execution.
 
--- Apache Tomcat: Configured within NetBeans as the server environment.
+- Apache Tomcat: Configured within NetBeans as the server environment.
 
 Step-by-Step Setup and Execution
 
@@ -42,11 +42,11 @@ Download the source code from GitHub and extract it to your local machine.
 
 2. Open Project in NetBeans:
 
--- Open NetBeans IDE.
+- Open NetBeans IDE.
   
--- Go to File > Open Project.
+- Go to File > Open Project.
   
--- Navigate to the extracted folder and select the SmartCampusAPI project.
+- Navigate to the extracted folder and select the SmartCampusAPI project.
 
 
 3. Configure Apache Tomcat:
