@@ -73,27 +73,27 @@ http://localhost:8080/SmartCampusAPI/api/v1
 
 Use these commands to interact with and test the API functionality
 
-### 1. API Discovery (Root Entry Point ) 
+### 1. API Discovery (Root Entry Point ): 
 
   - GET http://localhost:8080/SmartCampusAPI/api/v1
 
-### 2. List All Rooms 
+### 2. List All Rooms: 
  
  - GET http://localhost:8080/SmartCampusAPI/api/v1/rooms
 
-### 3. Register a New Room 
+### 3. Register a New Room: 
 
  - POST http://localhost:8080/SmartCampusAPI/api/v1/rooms \
   -H "Content-Type: application/json" \
   -d '{"id":"LIB-401", "name":"Library Group Study", "capacity":20}'
 
-### 4. Register a New Sensor (Linked to Room ) 
+### 4. Register a New Sensor (Linked to Room ): 
 
  - POST http://localhost:8080/SmartCampusAPI/api/v1/sensors \
   -H "Content-Type: application/json" \
   -d '{"id":"CO2-99", "type":"CO2", "status":"ACTIVE", "roomId":"LIB-301"}'
 
-### 5. Retrieve Sensor Reading History 
+### 5. Retrieve Sensor Reading History: 
 
  - GET http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings
 
